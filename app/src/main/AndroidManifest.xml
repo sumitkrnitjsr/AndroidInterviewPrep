@@ -36,5 +36,7 @@
 
         <activity android:name=".touchevent.TouchEventActivity"/>
 
+        <activity android:name=".recyclerview.RecyclerViewActivity"
+                    android:configChanges="orientation"/>
     </application>
 </manifest>

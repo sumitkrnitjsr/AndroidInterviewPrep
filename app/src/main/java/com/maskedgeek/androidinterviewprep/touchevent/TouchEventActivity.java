@@ -30,14 +30,14 @@ public class TouchEventActivity extends AppCompatActivity {
         findViewById(R.id.buttonTouch).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(getApplicationContext(), "Button Touch Event", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Button Touch Event", Toast.LENGTH_SHORT).show();
             }
         });
 
         findViewById(R.id.parent).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(getApplicationContext(), "Parent Touch Event", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Parent Touch Event", Toast.LENGTH_SHORT).show();
             }
         });
     }

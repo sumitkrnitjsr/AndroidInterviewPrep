@@ -8,4 +8,6 @@
     <string name="customview">Draw Custom View</string>
     <string name="touchevent">Touch Event</string>
     <string name="touch">Click Anywhere &amp; Button to Check</string>
+    <string name="recyclerview">RecyclerView</string>
+    <string name="github_code_link"> Get code of this app at github.com/sumitkrnitjsr/AndroidInterviewPrep </string>
 </resources>

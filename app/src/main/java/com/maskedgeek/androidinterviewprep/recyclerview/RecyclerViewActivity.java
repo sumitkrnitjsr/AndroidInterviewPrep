@@ -1,33 +1,30 @@
-package com.maskedgeek.androidinterviewprep;
+package com.maskedgeek.androidinterviewprep.recyclerview;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.maskedgeek.androidinterviewprep.MainActivity;
+import com.maskedgeek.androidinterviewprep.R;
 import com.maskedgeek.androidinterviewprep.customview.CustomViewActivity;
 import com.maskedgeek.androidinterviewprep.fragment.MainFragmentActivity;
 import com.maskedgeek.androidinterviewprep.fragment.backstack.FragmentBackStackActivity;
 import com.maskedgeek.androidinterviewprep.pageradapters.ActivityPagerAdapter;
-import com.maskedgeek.androidinterviewprep.recyclerview.RecyclerViewActivity;
 import com.maskedgeek.androidinterviewprep.touchevent.TouchEventActivity;
 
-/* Extend Activity class and define in Manifest file
-<action
-                android:name="android.intent.action.MAIN" />
-<category
-                android:name="android.intent.category.LAUNCHER" />
+import java.util.ArrayList;
 
-*/
+public class RecyclerViewActivity  extends AppCompatActivity implements AdapterActivityCommunicationInterface{
 
-// Empty default Layout visible
-
-
-public class MainActivity extends AppCompatActivity {
-
-    private String TAG = MainActivity.class.getSimpleName();
+    private String TAG = RecyclerViewActivity.class.getSimpleName();
+    private ArrayList<String> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -36,43 +33,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.d(TAG, " onCreate ");
         // call finish() here to skip onPause() and onStop() and directly call onDestroy()
-        setContentView(R.layout.activity_main);
-        findViewById(R.id.buttonFragments).setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, MainFragmentActivity.class));
-            }
-        });
-        findViewById(R.id.buttonAdapter).setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, ActivityPagerAdapter.class));
-            }
-        });
-        findViewById(R.id.buttonBackStack).setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, FragmentBackStackActivity.class));
-            }
-        });
-        findViewById(R.id.buttonCustomView).setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, CustomViewActivity.class));
-            }
-        });
-        findViewById(R.id.buttonTouchEvent).setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, TouchEventActivity.class));
-            }
-        });
-        findViewById(R.id.buttonrecyclerview).setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, RecyclerViewActivity.class));
-            }
-        });
+        setContentView(R.layout.activity_recyclerview);
+        RecyclerView recyclerView = findViewById(R.id.recyclerview);
+
+        for(int i = 0;i < 100;i++){
+            String var = Integer.toString(i) + Integer.toString(i + 1) + Integer.toString(i + 2);
+            list.add(var);
+        }
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
+        recyclerView.setAdapter(new RecyclerViewAdapter(list, this));
     }
 
     @Override
@@ -135,5 +104,10 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed(){
         Log.d(TAG, " onBackPressed ");
         super.onBackPressed();
+    }
+
+    @Override
+    public void onClick(int position) {
+        Toast.makeText(this, list.get(position) + " clicked", Toast.LENGTH_SHORT).show();
     }
 }
