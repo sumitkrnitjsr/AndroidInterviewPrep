@@ -10,4 +10,17 @@
     <string name="touch">Click Anywhere &amp; Button to Check</string>
     <string name="recyclerview">RecyclerView</string>
     <string name="github_code_link"> Get code of this app at github.com/sumitkrnitjsr/AndroidInterviewPrep </string>
+    <string name="dialog_toast">DIALOG TOAST</string>
+    <string name="dialog">Dialog</string>
+    <string name="Agree">Agree</string>
+    <string name="disagree">Disagree</string>
+    <string name="broadcast">Broadcast</string>
+    <string name="global_broadcast">Global Broadcast</string>
+    <string name="local_broadcast">Local Broadcast</string>
+    <string name="broadcastreceiver">BROADCASTRECEIVER</string>
+    <string name="service">SERVICE</string>
+    <string name="background_service">Background Service</string>
+    <string name="bind_service">BIND SERVICE</string>
+    <string name="unbind_service">UNBIND SERVICE</string>
+    <string name="toast_bound_service">TOAST FROM BOUND SERVICE</string>
 </resources>

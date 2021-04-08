@@ -14,6 +14,7 @@ public class MainApplication extends Application {
     public void onCreate(){
         super.onCreate();
         Log.d(TAG, " onCreate ");
+        Log.d(TAG,  " onCreate on Thread = " + Thread.currentThread().getId());
         // Later inject Dependencies
     }
 

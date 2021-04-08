@@ -38,5 +38,19 @@
 
         <activity android:name=".recyclerview.RecyclerViewActivity"
                     android:configChanges="orientation"/>
+        <activity android:name=".dialogtoast.DialogToastActivity"/>
+
+        <activity android:name=".broadcastreceiver.ActivityBroadcastReceiver"/>
+
+        <activity android:name=".services.ServiceActivity"/>
+
+        <service android:name=".services.BackgroundService"/>
+        
+        <receiver android:name=".broadcastreceiver.BatteryBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_CHANGED"/>
+            </intent-filter>
+        </receiver>
+
     </application>
 </manifest>

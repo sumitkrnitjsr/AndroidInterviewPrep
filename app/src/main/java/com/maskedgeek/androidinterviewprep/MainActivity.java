@@ -7,11 +7,14 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.maskedgeek.androidinterviewprep.broadcastreceiver.ActivityBroadcastReceiver;
 import com.maskedgeek.androidinterviewprep.customview.CustomViewActivity;
+import com.maskedgeek.androidinterviewprep.dialogtoast.DialogToastActivity;
 import com.maskedgeek.androidinterviewprep.fragment.MainFragmentActivity;
 import com.maskedgeek.androidinterviewprep.fragment.backstack.FragmentBackStackActivity;
 import com.maskedgeek.androidinterviewprep.pageradapters.ActivityPagerAdapter;
 import com.maskedgeek.androidinterviewprep.recyclerview.RecyclerViewActivity;
+import com.maskedgeek.androidinterviewprep.services.ServiceActivity;
 import com.maskedgeek.androidinterviewprep.touchevent.TouchEventActivity;
 
 /* Extend Activity class and define in Manifest file
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         // inject dependencies
         super.onCreate(savedInstanceState);
         Log.d(TAG, " onCreate ");
+        Log.d(TAG,  " onCreate on Thread = " + Thread.currentThread().getId());
         // call finish() here to skip onPause() and onStop() and directly call onDestroy()
         setContentView(R.layout.activity_main);
         findViewById(R.id.buttonFragments).setOnClickListener(new View.OnClickListener(){
@@ -71,6 +75,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 startActivity(new Intent(MainActivity.this, RecyclerViewActivity.class));
+            }
+        });
+        findViewById(R.id.buttonDialogToast).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, DialogToastActivity.class));
+            }
+        });
+        findViewById(R.id.buttonbroadcastreceiver).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, ActivityBroadcastReceiver.class));
+            }
+        });
+        findViewById(R.id.buttonService).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, ServiceActivity.class));
             }
         });
     }
