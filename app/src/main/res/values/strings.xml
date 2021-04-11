@@ -23,4 +23,9 @@
     <string name="bind_service">BIND SERVICE</string>
     <string name="unbind_service">UNBIND SERVICE</string>
     <string name="toast_bound_service">TOAST FROM BOUND SERVICE</string>
+    <string name="spawn_unlimited_threads">Spawn Unlimited Threads</string>
+    <string name="thread">THREADS</string>
+    <string name="memory_leak">MEMORY LEAK</string>
+    <string name="shared_pref">SHARED PREFERENCE</string>
+    <string name="enc_shared_pref">ENCRYPTED SHARED PREF</string>
 </resources>

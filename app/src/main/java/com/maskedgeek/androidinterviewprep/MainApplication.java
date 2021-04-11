@@ -1,7 +1,10 @@
 package com.maskedgeek.androidinterviewprep;
 
 import android.app.Application;
+import android.content.Context;
 import android.util.Log;
+
+import leakcanary.AppWatcher;
 
 // Extend Application class and define in Manifest file to run android:name=".MainApplication"
 // To check app with only manifest installed, use " adb shell pm list packages | grep -i "interview" "
@@ -29,6 +32,5 @@ public class MainApplication extends Application {
     public void registerActivityLifecycleCallbacks(Application.ActivityLifecycleCallbacks callbacks){
         Log.d(TAG, " registerActivityLifecycleCallbacks ");
     }
-
 
 }

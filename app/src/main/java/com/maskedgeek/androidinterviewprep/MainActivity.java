@@ -1,5 +1,6 @@
 package com.maskedgeek.androidinterviewprep;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,14 +8,20 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.maskedgeek.androidinterviewprep.aidl.RemoteService;
 import com.maskedgeek.androidinterviewprep.broadcastreceiver.ActivityBroadcastReceiver;
 import com.maskedgeek.androidinterviewprep.customview.CustomViewActivity;
 import com.maskedgeek.androidinterviewprep.dialogtoast.DialogToastActivity;
 import com.maskedgeek.androidinterviewprep.fragment.MainFragmentActivity;
 import com.maskedgeek.androidinterviewprep.fragment.backstack.FragmentBackStackActivity;
+import com.maskedgeek.androidinterviewprep.memoryleak.MemoryLeakActivity;
 import com.maskedgeek.androidinterviewprep.pageradapters.ActivityPagerAdapter;
 import com.maskedgeek.androidinterviewprep.recyclerview.RecyclerViewActivity;
+import com.maskedgeek.androidinterviewprep.services.BackgroundService;
 import com.maskedgeek.androidinterviewprep.services.ServiceActivity;
+import com.maskedgeek.androidinterviewprep.sharedpreference.EncryptedSharedPrefActivity;
+import com.maskedgeek.androidinterviewprep.sharedpreference.SharedPrefActivity;
+import com.maskedgeek.androidinterviewprep.threads.ThreadLimit;
 import com.maskedgeek.androidinterviewprep.touchevent.TouchEventActivity;
 
 /* Extend Activity class and define in Manifest file
@@ -95,6 +102,30 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ServiceActivity.class));
             }
         });
+        findViewById(R.id.buttonThreads).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, ThreadLimit.class));
+            }
+        });
+        findViewById(R.id.buttonMemoryLeak).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, MemoryLeakActivity.class));
+            }
+        });
+        findViewById(R.id.buttonSharedPref).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, SharedPrefActivity.class));
+            }
+        });
+        findViewById(R.id.buttonEncSharedPref).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, EncryptedSharedPrefActivity.class));
+            }
+        });
     }
 
     @Override
@@ -103,6 +134,8 @@ public class MainActivity extends AppCompatActivity {
         // Good place to check Permissions, LoginStatus, Network UI Update data
         super.onStart();
         Log.d(TAG, " onStart ");
+        Intent intent = new Intent(this, RemoteService.class);
+        startService(intent);
     }
 
     @Override

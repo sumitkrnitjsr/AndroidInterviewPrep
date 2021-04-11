@@ -1,2 +1,3 @@
+include ':dummyclientapplication'
 include ':app'
 rootProject.name = "AndroidInterviewPrep"

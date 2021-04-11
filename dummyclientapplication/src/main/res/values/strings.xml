@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DummyClientApplication</string>
+    <string name="aidl_call">AIDL CALL</string>
+</resources>
