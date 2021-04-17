@@ -50,6 +50,10 @@ dependencies {
     // Andoroid JetPack Library for encryption
     implementation 'androidx.security:security-crypto:1.0.0-rc04'
 
+    //Dagger
+    implementation 'com.google.dagger:dagger:2.34.1'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.34.1'
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
