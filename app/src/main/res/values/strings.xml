@@ -28,4 +28,9 @@
     <string name="memory_leak">MEMORY LEAK</string>
     <string name="shared_pref">SHARED PREFERENCE</string>
     <string name="enc_shared_pref">ENCRYPTED SHARED PREF</string>
+    <string name="advanced_android">Advanced Concepts</string>
+    <string name="lifecycle_dumb">Dumb Lifecycle</string>
+    <string name="txt_dumb_timer">Try Home Key and Back Key With This Activity</string>
+    <string name="lifecycle_aware">"Lifecycle Aware "</string>
+    <string name="viewmodel_livedata">ViewModel LiveData</string>
 </resources>

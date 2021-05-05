@@ -8,6 +8,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.maskedgeek.advancedinterviewprep.AdvancedAndroidActivity;
 import com.maskedgeek.androidinterviewprep.aidl.RemoteService;
 import com.maskedgeek.androidinterviewprep.broadcastreceiver.ActivityBroadcastReceiver;
 import com.maskedgeek.androidinterviewprep.customview.CustomViewActivity;
@@ -124,6 +125,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 startActivity(new Intent(MainActivity.this, EncryptedSharedPrefActivity.class));
+            }
+        });
+
+        findViewById(R.id.advanced_android).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, AdvancedAndroidActivity.class));
+                finish();
             }
         });
     }

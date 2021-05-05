@@ -16,6 +16,12 @@
     <activity
         android:name=".MainActivity"
         android:configChanges="orientation">
+        <intent-filter>
+            <action
+                android:name="android.intent.action.MAIN" />
+            <category
+                android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
     </activity>
 
         <activity android:name=".fragment.MainFragmentActivity"
@@ -49,13 +55,15 @@
         <activity android:name=".sharedpreference.EncryptedSharedPrefActivity"/>
 
         <activity android:name="com.maskedgeek.advancedinterviewprep.dependency.dagger.stage3.ConsumerActivity">
-            <intent-filter>
-                <action
-                    android:name="android.intent.action.MAIN" />
-                <category
-                    android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
+        <!-- Advanced Android Declarations -->
+        <activity android:name= "com.maskedgeek.advancedinterviewprep.AdvancedAndroidActivity"/>
+
+        <activity android:name="com.maskedgeek.advancedinterviewprep.lifecycleaware.DumbLifecycleActivity"/>
+
+        <activity android:name="com.maskedgeek.advancedinterviewprep.lifecycleaware.LifecycleAwareActivity"/>
+        <activity android:name="com.maskedgeek.advancedinterviewprep.lifecycleaware.LiveDataActivity"/>
 
         <service android:name=".services.BackgroundService"/>
 
