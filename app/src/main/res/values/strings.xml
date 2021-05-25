@@ -33,4 +33,7 @@
     <string name="txt_dumb_timer">Try Home Key and Back Key With This Activity</string>
     <string name="lifecycle_aware">"Lifecycle Aware "</string>
     <string name="viewmodel_livedata">ViewModel LiveData</string>
+    <string name="rx_txt">Rx Basic</string>
+    <string name="enter_search_term">Enter Search Term Here</string>
+    <string name="rx_search">Rx Search Activity</string>
 </resources>
