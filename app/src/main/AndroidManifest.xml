@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.maskedgeek.androidinterviewprep">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <!--android:name=".MainApplication" -->
     <application
         android:allowBackup="true"
@@ -34,8 +35,8 @@
                     android:configChanges="orientation"/>
 
         <activity android:name=".customview.CustomViewActivity"
-            android:configChanges="orientation"/>
 
+            android:configChanges="orientation"/>
         <activity android:name=".touchevent.TouchEventActivity"/>
 
         <activity android:name=".recyclerview.RecyclerViewActivity"
@@ -64,6 +65,10 @@
 
         <activity android:name="com.maskedgeek.advancedinterviewprep.lifecycleaware.LifecycleAwareActivity"/>
         <activity android:name="com.maskedgeek.advancedinterviewprep.lifecycleaware.LiveDataActivity"/>
+
+        <activity android:name="com.maskedgeek.advancedinterviewprep.rx.BasicRxActivity"/>
+
+        <activity android:name="com.maskedgeek.advancedinterviewprep.rx.RxSearchActivity"/>
 
         <service android:name=".services.BackgroundService"/>
 

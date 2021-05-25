@@ -7,6 +7,8 @@ import com.maskedgeek.advancedinterviewprep.lifecycleaware.DumbLifecycleActivity
 import com.maskedgeek.advancedinterviewprep.lifecycleaware.LifecycleAwareActivity
 import com.maskedgeek.advancedinterviewprep.lifecycleaware.LifecycleAwareTimer
 import com.maskedgeek.advancedinterviewprep.lifecycleaware.LiveDataActivity
+import com.maskedgeek.advancedinterviewprep.rx.BasicRxActivity
+import com.maskedgeek.advancedinterviewprep.rx.RxSearchActivity
 import com.maskedgeek.androidinterviewprep.R
 import com.maskedgeek.androidinterviewprep.base.BaseActivity
 
@@ -27,6 +29,13 @@ class AdvancedAndroidActivity : BaseActivity() {
         findViewById<View>(R.id.buttonLiveData).setOnClickListener {
             startActivity(Intent(this@AdvancedAndroidActivity, LiveDataActivity::class.java))
         }
+        findViewById<View>(R.id.buttonRx).setOnClickListener {
+            startActivity(Intent(this@AdvancedAndroidActivity, BasicRxActivity::class.java))
+        }
+        findViewById<View>(R.id.buttonRxSearch).setOnClickListener {
+            startActivity(Intent(this@AdvancedAndroidActivity, RxSearchActivity::class.java))
+        }
+
     }
 
     override fun onStart() {
