@@ -5,6 +5,7 @@ import android.app.Application;
 import com.maskedgeek.advancedinterviewprep.dependency.dagger.stage3.dependency.DependencyDatabaseService;
 import com.maskedgeek.advancedinterviewprep.dependency.dagger.stage3.dependency.DependencyNetworkService;
 import com.maskedgeek.advancedinterviewprep.dependency.stage2.DaggerApplication;
+import com.maskedgeek.advancedinterviewprep.rxroomdagger.ui.ApplicationComponent2;
 
 import javax.inject.Inject;
 
@@ -19,6 +20,8 @@ public class ConsumerApplication extends Application {
     // Storing component as it needs to be passed as dependent in activitycomponent
     public ApplicationComponent mApplicationComponent;
 
+
+
     public void onCreate(){
             super.onCreate();
 
@@ -27,6 +30,5 @@ public class ConsumerApplication extends Application {
                         .build();
 
             mApplicationComponent.inject(this);
-
     }
 }

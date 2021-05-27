@@ -4,6 +4,15 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
+import com.maskedgeek.advancedinterviewprep.rxroomdagger.data.local.db.DatabaseService;
+import com.maskedgeek.advancedinterviewprep.rxroomdagger.ui.ApplicationComponent2;
+import com.maskedgeek.advancedinterviewprep.rxroomdagger.ui.ApplicationComponent2;
+import com.maskedgeek.advancedinterviewprep.rxroomdagger.ui.ApplicationModule;
+import com.maskedgeek.advancedinterviewprep.rxroomdagger.ui.DaggerApplicationComponent2;
+
+
+import javax.inject.Inject;
+
 import leakcanary.AppWatcher;
 
 // Extend Application class and define in Manifest file to run android:name=".MainApplication"
@@ -12,6 +21,10 @@ import leakcanary.AppWatcher;
 public class MainApplication extends Application {
 
     private String TAG = MainApplication.class.getSimpleName();
+    public  ApplicationComponent2 applicationComponent;
+
+    @Inject
+    public DatabaseService databaseService;
 
     @Override
     public void onCreate(){
@@ -19,6 +32,10 @@ public class MainApplication extends Application {
         Log.d(TAG, " onCreate ");
         Log.d(TAG,  " onCreate on Thread = " + Thread.currentThread().getId());
         // Later inject Dependencies
+        applicationComponent = DaggerApplicationComponent2.builder().
+              applicationModule(new com.maskedgeek.advancedinterviewprep.rxroomdagger.ui.ApplicationModule(this)).build();
+        applicationComponent.inject(this);
+
     }
 
     @Override

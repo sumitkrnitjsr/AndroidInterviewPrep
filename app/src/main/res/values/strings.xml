@@ -36,4 +36,6 @@
     <string name="rx_txt">Rx Basic</string>
     <string name="enter_search_term">Enter Search Term Here</string>
     <string name="rx_search">Rx Search Activity</string>
+    <string name="rx_room_dagger">Rx_Room_Dagger_Activity</string>
+    <string name="rxdaggerroom_guide_text">Press Home and Then Open from Recent to View Changes</string>
 </resources>
