@@ -9,6 +9,7 @@ import com.maskedgeek.advancedinterviewprep.lifecycleaware.LifecycleAwareTimer
 import com.maskedgeek.advancedinterviewprep.lifecycleaware.LiveDataActivity
 import com.maskedgeek.advancedinterviewprep.rx.BasicRxActivity
 import com.maskedgeek.advancedinterviewprep.rx.RxSearchActivity
+import com.maskedgeek.advancedinterviewprep.rxroomdagger.ui.RxDaggerRoomActivity
 import com.maskedgeek.androidinterviewprep.R
 import com.maskedgeek.androidinterviewprep.base.BaseActivity
 
@@ -35,7 +36,9 @@ class AdvancedAndroidActivity : BaseActivity() {
         findViewById<View>(R.id.buttonRxSearch).setOnClickListener {
             startActivity(Intent(this@AdvancedAndroidActivity, RxSearchActivity::class.java))
         }
-
+        findViewById<View>(R.id.buttonRxRoomDagger).setOnClickListener {
+            startActivity(Intent(this@AdvancedAndroidActivity, RxDaggerRoomActivity::class.java))
+        }
     }
 
     override fun onStart() {

@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/server_app"
         android:supportsRtl="true"
-        android:name = "com.maskedgeek.advancedinterviewprep.dependency.dagger.stage3.ConsumerApplication"
+        android:name = ".MainApplication"
         android:theme="@style/Theme.AndroidInterviewPrep">
 
         <!-- Launcher Activity -->
@@ -69,6 +69,8 @@
         <activity android:name="com.maskedgeek.advancedinterviewprep.rx.BasicRxActivity"/>
 
         <activity android:name="com.maskedgeek.advancedinterviewprep.rx.RxSearchActivity"/>
+
+        <activity android:name="com.maskedgeek.advancedinterviewprep.rxroomdagger.ui.RxDaggerRoomActivity"/>
 
         <service android:name=".services.BackgroundService"/>
 
