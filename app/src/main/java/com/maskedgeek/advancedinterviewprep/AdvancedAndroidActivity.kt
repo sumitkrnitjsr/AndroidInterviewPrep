@@ -7,6 +7,7 @@ import com.maskedgeek.advancedinterviewprep.lifecycleaware.DumbLifecycleActivity
 import com.maskedgeek.advancedinterviewprep.lifecycleaware.LifecycleAwareActivity
 import com.maskedgeek.advancedinterviewprep.lifecycleaware.LifecycleAwareTimer
 import com.maskedgeek.advancedinterviewprep.lifecycleaware.LiveDataActivity
+import com.maskedgeek.advancedinterviewprep.retrofit.RetrofitActivity
 import com.maskedgeek.advancedinterviewprep.rx.BasicRxActivity
 import com.maskedgeek.advancedinterviewprep.rx.RxSearchActivity
 import com.maskedgeek.advancedinterviewprep.rxroomdagger.ui.RxDaggerRoomActivity
@@ -38,6 +39,9 @@ class AdvancedAndroidActivity : BaseActivity() {
         }
         findViewById<View>(R.id.buttonRxRoomDagger).setOnClickListener {
             startActivity(Intent(this@AdvancedAndroidActivity, RxDaggerRoomActivity::class.java))
+        }
+        findViewById<View>(R.id.buttonRetrofit).setOnClickListener {
+            startActivity(Intent(this@AdvancedAndroidActivity, RetrofitActivity::class.java))
         }
     }
 
