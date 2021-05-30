@@ -38,4 +38,5 @@
     <string name="rx_search">Rx Search Activity</string>
     <string name="rx_room_dagger">Rx_Room_Dagger_Activity</string>
     <string name="rxdaggerroom_guide_text">Press Home and Then Open from Recent to View Changes</string>
+    <string name="txt_retrofit">Retrofit</string>
 </resources>

@@ -72,6 +72,8 @@
 
         <activity android:name="com.maskedgeek.advancedinterviewprep.rxroomdagger.ui.RxDaggerRoomActivity"/>
 
+        <activity android:name="com.maskedgeek.advancedinterviewprep.retrofit.RetrofitActivity"/>
+
         <service android:name=".services.BackgroundService"/>
 
         <service android:name=".aidl.RemoteService"

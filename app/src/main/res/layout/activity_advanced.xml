@@ -58,6 +58,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttonRxSearch"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_retrofit"
+        android:id="@+id/buttonRetrofit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonRxRoomDagger"/>
+
+
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -71,6 +81,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonRxRoomDagger"/>
+        app:layout_constraintTop_toBottomOf="@id/buttonRetrofit"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

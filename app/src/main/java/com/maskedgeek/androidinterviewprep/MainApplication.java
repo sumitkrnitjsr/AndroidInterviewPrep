@@ -4,10 +4,11 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
+import com.maskedgeek.advancedinterviewprep.retrofit.ApplicationComponent3;
+import com.maskedgeek.advancedinterviewprep.retrofit.ApplicationModule3;
+import com.maskedgeek.advancedinterviewprep.retrofit.DaggerApplicationComponent3;
 import com.maskedgeek.advancedinterviewprep.rxroomdagger.data.local.db.DatabaseService;
 import com.maskedgeek.advancedinterviewprep.rxroomdagger.ui.ApplicationComponent2;
-import com.maskedgeek.advancedinterviewprep.rxroomdagger.ui.ApplicationComponent2;
-import com.maskedgeek.advancedinterviewprep.rxroomdagger.ui.ApplicationModule;
 import com.maskedgeek.advancedinterviewprep.rxroomdagger.ui.DaggerApplicationComponent2;
 
 
@@ -22,6 +23,7 @@ public class MainApplication extends Application {
 
     private String TAG = MainApplication.class.getSimpleName();
     public  ApplicationComponent2 applicationComponent;
+    public ApplicationComponent3 applicationComponent3;
 
     @Inject
     public DatabaseService databaseService;
@@ -35,6 +37,10 @@ public class MainApplication extends Application {
         applicationComponent = DaggerApplicationComponent2.builder().
               applicationModule(new com.maskedgeek.advancedinterviewprep.rxroomdagger.ui.ApplicationModule(this)).build();
         applicationComponent.inject(this);
+
+        applicationComponent3 = DaggerApplicationComponent3.builder().
+                applicationModule3(new ApplicationModule3(this)).build();
+        applicationComponent3.inject(this);
 
     }
 
